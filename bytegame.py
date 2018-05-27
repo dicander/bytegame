@@ -2,7 +2,7 @@ import random
 
 
 def main():
-    answers = list(range(32,128))
+    answers = list(range(32,127))
     random.shuffle(answers)
     correct = 0
     mistakes = []
