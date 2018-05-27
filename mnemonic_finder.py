@@ -7,5 +7,6 @@ def main():
             continue
         print(chr(x), x, hex(x), bin(x))
 
+
 if __name__ == '__main__':
     main()
