@@ -20,7 +20,7 @@ def main():
 
 def run_game(answers, confusing, correct, mistakes, speeds):
     """Ask the questions, return number of answers. Modifies mistakes and speeds."""
-    for number in answers[:10]:
+    for number in answers:
         before = time.time()
         to_ask = chr(number)
         if to_ask in confusing.keys():
@@ -38,13 +38,14 @@ def run_game(answers, confusing, correct, mistakes, speeds):
 
 def generate_questions():
     """Generates all data related to a game."""
-    answers = list(range(32, 127))
+    answers = list(range(32, 128))
     random.shuffle(answers)
     correct = 0
     mistakes = []
     speeds = []
     time_before = time.time()
     confusing = {
+        "\x7f": "DEL",
         "0": "0 (digit)",
         "1": "1 (digit)",
         "O": "O (letter)",
